@@ -1,28 +1,34 @@
 #include <iostream>
 #include <cstring>
 
+// 1. 문자(char) 로 부터의 문자열 생성, C 문자열 (char *) 로 부터의 생성
+// 2. 문자열 길이를 구하는 함수
+// 3. 문자열 뒤에 다른 문자열 붙이기
+// 4. 문자열 내에 포함되어 있는 문자열 구하기
+// 5. 문자열이 같은지 비교
+// 6. 문자열 크기 비교 (사전 순)
+
 class string {
     char* str;
     int len;
 
     public:
-        string(char c, int n);
-        string(const char *c);
-        string(const string &s);
-        ~string();
+    string(char c);
+    string(const char *c);
+    ~string();
 
-    void add_string(const string &s);
-    void copy_string(const string &s);
     int strlen();
+    void add_string(const string &s);
+    char* substring(const string &s);
+    bool operator==(const string& other);
+    bool operator<(const string& other);
 };
 
-string::string(char c, int n){
-    len = n;
-    str = new char[n];
-    for(int i=0;i<n;i++){
-        str[i] = c;
-    }
-    str[len] = '\0';
+string::string(char c){
+    len = 1;
+    str = new char[2];
+    str[0] = c;
+    str[1] = '\0';
 }
 
 string::string(const char* c){
@@ -31,11 +37,6 @@ string::string(const char* c){
     strcpy(str, c);
 }
 
-string::string(const string &s){
-    len = s.len;
-    str = new char[len+1];
-    str = strcpy(str, s.str);
-}
 
 string::~string(){
     delete[] str;
