@@ -1,7 +1,7 @@
 #include <iostream>
 
 class my_class {
-    mutable int prev_print_num;
+    mutable int prev_print_num; // const 함수에서도 값을 변경하고자 하는 경우, mutable 로 선언하면 된다.
     int my_num;
 
     public:

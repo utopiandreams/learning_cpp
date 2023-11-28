@@ -13,7 +13,7 @@ class Test{
         std::cout << "소멸자 호출 : " << c << std::endl;
         delete c;
     }
-};
+};:
 
 void test(){
     Test B('b');
