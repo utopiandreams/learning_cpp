@@ -5,7 +5,9 @@ class Complex {
     double img;
 
     private:
-    double getNumber(const char* c, int s_idx, int e_idx);
+    double getNumber(const char* c, int s_idx, int e_idx){
+        
+    }
 
     public:
     Complex(): real(0), img(0) {};
@@ -27,7 +29,6 @@ Complex::Complex(const char* c){
     int blank_idx = 0;
     for(int i=0;i<len;i++){
         if(c[i] == 'i') i_idx = i; 
-        if(c[i] == ' ') blank_idx = i;
     }
     if(!idx){
         

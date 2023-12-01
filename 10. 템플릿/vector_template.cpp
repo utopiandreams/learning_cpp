@@ -46,6 +46,7 @@ class Vector {
 };
 
 // 템플릿 특수화 : 특정 타입에 대해서 별도로 처리
+// bool 의 경우 1 개의 bit 만 있으면 되므로 실제 표준 라이브러리에서도 아래와 같이 별도 구현 되어있다.
 template <> // 이렇게 하면 bool 에 대해서는 아래와 같이 처리 된다.
 class Vector<bool> {
     unsigned int* data;
