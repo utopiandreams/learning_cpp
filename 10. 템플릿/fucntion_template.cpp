@@ -16,6 +16,6 @@ T bubbleSort(const T& arr){
 }
 
 int main(){
-    int m = max(3, 5); // 템플릿 함수는 타입인자를 선언해줄 필요가 없다.
+    int m = max(3, 5); // 템플릿 함수는 타입인자를 선언해줄 필요가 없다. 자동으로 유추하여 할당
     std::cout << m; 
 }

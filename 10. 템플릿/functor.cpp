@@ -8,18 +8,14 @@ struct Comp{
     }
 };
 
-template <typename T, typename Comp<T>>
-void bubble_sort(const T& t){
+template <typename T, typename Comp>
+void bubble_sort(const T& t, Comp& comp){
     for(int i=0;i<t.size();i++){
         for(int j=i+1;j<t.size();j++){
-            if(!comp())
+            if(!comp(T[i], T[j])) t.swap(i, j); 
         }
     }
 }
-
-
-
-
 
 int main(){
 
